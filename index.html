@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"
+        meta name="viwport" content="width=device-width, initial-scale=1.0">
+        <title>IMC</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+        <div>
+        </div>
+    <div>
+        <h1>Calculadora IMC</h1>
+    </div>
+    <div>
+        <label> Peso:</label>
+        <input id="inputPeso" />
+            <label>Altura: </label>
+        <input id="inputAltura" />
+        <button class="btn" id="btnCalcular" onclick=calcularIMC()>Calcular</button>
+    </div>
+    <div class="divResultado">
+        <label>Resultado: </label>
+        <label  id="lblResultado"></label>
+    </div>
+    <div>
+        by Marissol
+    </div>
+</body>
+<script>
+
+    function calcularIMC(){
+
+    let peso = document.getElementById("inputPeso").value;
+    let altura = document.getElementById("inputAltura").value;
+    let resultado = peso/(altura*altura);
+    
+
+    
+    // if (peso==" " || altura==" "){
+        // document.getElementById("lblResultado").innerHTML = "preencha todos os campos";
+        // document.getElementById("lblResultado").styler.color = "red";
+    // }else{
+        // document.getElementById("lblResultado").innertext = + resultado;
+        // document.getElementById("lblResultado").styler.color = "#120588"
+    // }
+    if(peso=="" || Altura==""){
+            document.getElementById("lblResultado").innerText = "Preencha todos os campos"
+            document.getElementById("lblResultado").classList.add("textoErro");
+        }
+        else{
+            document.getElementById("lblResultado").innerText = "" + resultado;
+            document.getElementById("lblResultado").classList.remove("textoErro");
+        }
+    }
+</script>
+</html>
